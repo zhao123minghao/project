@@ -8,6 +8,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Cp Dates';
+$this->params['breadcrumbs'][] = ['label' => 'Course-Professor', 'url' => ['coupro/index']];
 $this->params['breadcrumbs'][] = $this->title;
 $GLOBALS['cp_id'] = $cp_id;
 ?>

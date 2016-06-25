@@ -7,6 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\CpDate */
 
 $this->title = $model->cpd_id;
+$this->params['breadcrumbs'][] = ['label' => 'Course-Professor', 'url' => ['coupro/index']];
 $this->params['breadcrumbs'][] = ['label' => 'Cp Dates', 'url' => ['index','cp_id' => $cp_id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
