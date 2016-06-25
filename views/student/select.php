@@ -32,7 +32,7 @@ $keys = array_keys($cp);
 ?>
 
 <div class="course-selection">
-    <div class="col-sm-7">
+    <div class="col-sm-7 course-table">
         <table class="table table-striped">
             <thead>
             <th>course name</th>

@@ -145,3 +145,8 @@ a.desc:after {
 .infor-date{
     width: 120px;
 }
+
+.course-table{
+    height: 400px;
+    overflow-y: scroll;
+}
