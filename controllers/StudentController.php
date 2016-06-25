@@ -81,7 +81,10 @@ class StudentController extends Controller
             $user->id = $model->user_id;
             $user->username = strval($model->user_id);
             $user->password = '#'.$model->stu_ssn;
-            $user->user_type = 1;
+            $user->user_type = 2;
+            if($model->stu_cost === ''){
+                $model->stu_cost = 0;
+            }
             if($user->save()) {
                 if ($model->save()) {
                     return $this->redirect(['view', 'id' => $model->user_id]);

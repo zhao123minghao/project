@@ -90,13 +90,13 @@ class CouPro extends \yii\db\ActiveRecord
 
     public function getPlaceTime($id)
     {
-        $list_t = CpDate::find(['cpd_cp'=>$id])->all();
+        $list_t = CpDate::find()->where(['cpd_cp'=>$id])->all();
         $list = array();
     }
 
     public function getUserCourseList($id)
     {
-        $list_t = CouPro::find(['cp_pro'=>$id])->all();
+        $list_t = CouPro::find()->where(['cp_pro'=>$id])->all();
         $list = array();
         foreach($list_t as $value)
         {
