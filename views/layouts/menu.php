@@ -18,6 +18,8 @@ use yii\helpers\Html;
         'class' => 'list-group-item menu-relation',]);
         echo Html::a('Course Management', ['course/index'], [
         'class' => 'list-group-item menu-relation',]);
+        echo Html::a('Department Management', ['department/index'], [
+        'class' => 'list-group-item menu-relation',]);
         echo Html::a('Professor-Course', ['coupro/index'], [
         'class' => 'list-group-item menu-relation',]);
         echo Html::a('Student-Course', ['coursestudent/index'], [
