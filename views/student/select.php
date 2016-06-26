@@ -48,7 +48,7 @@ $keys = array_keys($cp);
                     <td <?php if($res === -1)
                     {echo 'onmouseover="setColor('.$cp_list.')" onmouseout="rtable()"';}//
                     ?>><?=$cp[$value][0]?></td>
-                    <td><?=$cp[$value][2]?></td>
+                    <td><?=10 - $cp[$value][2]?></td>
                     <td><?=$cp[$value][1]?></td>
                     <td>
                         <?php

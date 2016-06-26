@@ -80,7 +80,7 @@ class CourseProfessor extends \yii\db\ActiveRecord
                 continue;
             }
             $list[$value->cp_id] = $value->course_name .' '
-                .$value->professor_name . ' ' .$cpdate_list .' left '.$value->number;
+                .$value->professor_name . ' ' .$cpdate_list .' selected '.$value->number;
             $cpdate_list = '';
         }
         return $list;
