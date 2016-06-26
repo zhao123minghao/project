@@ -78,6 +78,13 @@ class StudentController extends Controller
         $user = new User();
 
         if ($model->load(Yii::$app->request->post())) {
+            $stu = User::findOne($model->user_id);
+            if($stu !== null){
+                $model->addError('user_id', 'ID exists');
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
             $user->id = $model->user_id;
             $user->username = strval($model->user_id);
             $user->password = '#'.$model->stu_ssn;
@@ -313,9 +320,9 @@ class StudentController extends Controller
 
     public function timeCheck($cou_list,$cou_id)
     {
-        for($i=1;$i<6;$i++)
+        for($i=1;$i<8;$i++)
         {
-            for($j=1;$j<8;$j++)
+            for($j=1;$j<6;$j++)
             {
                 $cou[$i][$j] = 0;
             }

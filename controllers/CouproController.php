@@ -62,13 +62,19 @@ class CouproController extends Controller
     {
         $model = new CouPro();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->cp_id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            if($model->cp_cost === ''){
+                $model->cp_cost = 0;
+            }
+            if($model->save()) {
+                return $this->redirect(['view', 'id' => $model->cp_id]);
+            }
         }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+
     }
 
     /**

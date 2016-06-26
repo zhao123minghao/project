@@ -107,13 +107,13 @@ $keys = array_keys($cp);
         else if($message === '2')
         {echo 'alert("ths course is full.");';}?>
     };
-function setColor(time,date)
+function setColor(date,time)
 {
     dt_a = new Array();
     for(var i=1;i<8;i++)
     {
         dt_a[i] = new Array();
-        for(var j=1;j<6;j++)
+        for(var j=1;j<8;j++)
         {
             time_str = String(i);
             date_str = String(j);

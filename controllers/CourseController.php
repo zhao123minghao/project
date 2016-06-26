@@ -80,13 +80,17 @@ class CourseController extends Controller
     {
         $model = new Course();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->course_id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            $cou = Course::findOne($model->course_id);
+            if ($cou === null &&$model->save()) {
+                return $this->redirect(['view', 'id' => $model->course_id]);
+            } else {
+                $model->addError('course_id', 'ID exists');
+            }
         }
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     /**

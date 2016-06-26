@@ -63,8 +63,14 @@ class ProfessorController extends Controller
     {
         $model = new Professor();
         $user = new User();
-
         if ($model->load(Yii::$app->request->post())) {
+            $pro = User::findOne($model->user_id);
+            if($pro !== null){
+                $model->addError('user_id', 'ID exists');
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
             $user->id = $model->user_id;
             $user->username = strval($model->user_id);
             $user->password = '#'.$model->pro_ssn;
