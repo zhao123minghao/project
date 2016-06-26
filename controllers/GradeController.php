@@ -41,10 +41,11 @@ class GradeController extends \yii\web\Controller
         $cs_id = $data['cs_id'];
         $cp_id = $data['cp_id'];
         $grade = $data['grade'];
-
-        $model = CourseStu::findOne($cs_id);
-        $model->cs_gra = $grade;
-        $model->save();
+        if($grade <= 100 && $grade >= 0) {
+            $model = CourseStu::findOne($cs_id);
+            $model->cs_gra = $grade;
+            $model->save();
+        }
 
         return $this->redirect(['grade/set','course'=>$cp_id]);
     }
