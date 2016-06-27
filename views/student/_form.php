@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Student */
 /* @var $form yii\widgets\ActiveForm */
+$status = ['normal'=>'normal','drop out'=>'drop out','flunk out'=>'flunk out'];
 ?>
 
 <div class="student-form">
@@ -20,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'stu_ssn')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'stu_status')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'stu_status')->dropDownList($status) ?>
 
     <?= $form->field($model, 'stu_gdata')->input('',['type'=>'date']) ?>
 

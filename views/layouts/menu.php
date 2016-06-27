@@ -54,6 +54,8 @@ if($menu_set == 2){?>
             'class' => 'list-group-item menu-relation',]);
         echo Html::a('My Grades', ['coursestudent/sview'], [
             'class' => 'list-group-item menu-relation',]);
+        echo Html::a('My Cost', ['student/cost'], [
+            'class' => 'list-group-item menu-relation',]);
         ?>
     </div>
 </div>

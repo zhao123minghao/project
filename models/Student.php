@@ -48,12 +48,12 @@ class Student extends \yii\db\ActiveRecord
     {
         return [
             'user_id' => 'User ID',
-            'stu_name' => 'Stu Name',
-            'stu_birth' => 'Stu Birth',
-            'stu_ssn' => 'Stu Ssn',
-            'stu_status' => 'Stu Status',
-            'stu_gdata' => 'Stu Gdata',
-            'stu_cost' => 'Stu Cost',
+            'stu_name' => 'Student Name',
+            'stu_birth' => 'Student Birth',
+            'stu_ssn' => 'Student Ssn',
+            'stu_status' => 'Student Status',
+            'stu_gdata' => 'graduate date',
+            'stu_cost' => 'Student Cost',
         ];
     }
 

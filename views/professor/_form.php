@@ -8,6 +8,7 @@ use app\models\Department;
 /* @var $model app\models\Professor */
 /* @var $form yii\widgets\ActiveForm */
 $departs = new Department();
+$status = ['normal'=>'normal','vacation'=>'vocation','business travel'=>'business travel'];
 ?>
 
 <div class="professor-form">
@@ -22,7 +23,7 @@ $departs = new Department();
 
     <?= $form->field($model, 'pro_depart')->dropDownList($departs->getDepartList()) ?>
 
-    <?= $form->field($model, 'pro_status')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'pro_status')->dropDownList($status) ?>
 
     <?= $form->field($model, 'pro_ssn')->textInput(['maxlength' => true]) ?>
 

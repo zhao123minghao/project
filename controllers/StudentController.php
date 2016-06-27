@@ -341,4 +341,36 @@ class StudentController extends Controller
         }
         return true;
     }
+
+    public function actionCost(){
+        $session = \yii::$app->session;
+        $user_id = $session->get('user');
+        $list = Student::getCourseNumList($user_id);
+        $slist = Student::getCourseColorList($user_id);
+        $prc = new CourseProfessor();
+
+        $cp_major = 0;
+        $cp_first = -1;
+        $cp_secnond = -1;
+
+        foreach($list as $value)
+        {
+            if($value[1] == 0)
+            {
+                $cp_major ++;
+            }
+            if($value[1] == 1)
+            {
+                $cp_first = $value[0];
+            }
+            if($value[1] == 2)
+            {
+                $cp_secnond = $value[0];
+            }
+        }
+
+        return $this->render('cost',
+            ['list'=>$list,'cp'=>$prc->getCpList(),
+                'slist'=>$slist,'fri'=>$cp_first,'sec'=>$cp_secnond]);
+    }
 }
